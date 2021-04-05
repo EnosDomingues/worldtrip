@@ -37,6 +37,9 @@ export default function Home() {
           <SwiperSlide>
             <Image src="/swiper-europe.png" alt="europe"/>
           </SwiperSlide>
+          <SwiperSlide>
+            <Image src="/swiper-europe.png" alt="europe"/>
+          </SwiperSlide>
         </Swiper>
       </Flex>
 
