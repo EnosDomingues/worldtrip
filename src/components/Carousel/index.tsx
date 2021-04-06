@@ -65,7 +65,7 @@ export function Carousel() {
             align="center"
             justify="center"
           >
-            <Image src={isMobileVersion ? slide.src : '/swiper-europe-mobile.png'} alt={slide.header}/>
+            <Image src={isMobileVersion ? slide.src : '/swiper-europe-mobile.png'} alt={slide.header} w="100%"/>
             <Box position="absolute" zIndex="1">
               <Text
                 as="h1"
