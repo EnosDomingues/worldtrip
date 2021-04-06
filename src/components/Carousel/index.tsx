@@ -54,13 +54,13 @@ export function Carousel() {
     slidesPerView={1}
     navigation
     pagination={{ clickable: true }}
+    color="red"
     >
       {slides.map(slide => (
         <SwiperSlide key={slide.id}>
           <Flex
             w="100%"
             maxW={isWideVersion ? "1140px" : "100%"}
-            mb="10"
             position="relative"
             align="center"
             justify="center"
