@@ -13,25 +13,25 @@ export function Carousel() {
       text: 'O continente mais antigo.'
     },
     {
-      id: 1,
+      id: 2,
       src: '/swiper-europe.png',
       header: 'Europa',
       text: 'O continente mais antigo.'
     },
     {
-      id: 1,
+      id: 3,
       src: '/swiper-europe.png',
       header: 'Europa',
       text: 'O continente mais antigo.'
     },
     {
-      id: 1,
+      id: 4,
       src: '/swiper-europe.png',
       header: 'Europa',
       text: 'O continente mais antigo.'
     },
     {
-      id: 1,
+      id: 5,
       src: '/swiper-europe.png',
       header: 'Europa',
       text: 'O continente mais antigo.'
@@ -44,8 +44,6 @@ export function Carousel() {
     slidesPerView={1}
     navigation
     pagination={{ clickable: true }}
-    onSwiper={(swiper) => console.log(swiper)}
-    onSlideChange={() => console.log('slide change')}
     width={1140}
     >
       {slides.map(slide => (
