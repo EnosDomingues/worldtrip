@@ -25,7 +25,7 @@ export function TravelTypes() {
           maxW="1160px"
           w="100%"
           h="36"
-          my="24"
+          my={isMobileScreen ? "8" : "24"}
           align="center">
             <Flex justify="space-between" width="100%" m="0 16px" direction="column" align="center">
               <Flex w="100%" justify="space-between" p="0 34px">

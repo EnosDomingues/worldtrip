@@ -21,7 +21,7 @@ export function TravelType({type, src}: ITravelTypeProps) {
             src={isMobileScreen ? '/ellipse.svg' : src}
             alt={type}
             w={isMobileScreen ? '8px' : '85px'}
-            h="85px"
+            h={isMobileScreen ? '50px' : '85px'}
             m="0 auto"
           />
           <Text
