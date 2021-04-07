@@ -11,8 +11,6 @@ export function TravelType({type, src}: ITravelTypeProps) {
     md: false
   })
 
-  console.log(isMobileScreen)
-
   return (
     <>
       {isMobileScreen !== undefined && (
