@@ -155,17 +155,30 @@ export default function Continents({ continent } : ContinentsProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  /* const { continentId } = params; */
+  const europe = 
+    {
+      id: 1,
+      info: {
+        cities: 24,
+        countries: 50,
+        languages: 60
+      },
+      name: 'Europa',
+      description: 'A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste',
+      banner_mobile: '/europe-page-banner-mobile.png'
+    }
 
-  const { continent: continents } = await api.get(`/`)
-  .then(response => response.data)
+  
 
-  const requestedContinent = continents[0]
+/*   const { continent: continents } = await api.get(`/`)
+  .then(response => response.data) */
+
+  /* const requestedContinent = continents[0] */
 
 
   return {
     props: {
-      continent: requestedContinent
+      continent: europe
     },
   }
 }

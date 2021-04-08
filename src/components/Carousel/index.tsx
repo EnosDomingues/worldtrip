@@ -66,9 +66,10 @@ export function Carousel() {
             align="center"
             justify="center"
           >
-            <Link href="/continents/1" passHref>
-              <Image src={isMobileVersion ? slide.src : '/swiper-europe-mobile.png'} alt={slide.header} w="100%"/>
-            </Link>
+            <Link href="/continents/1">
+              <Box>
+              <Image src={isMobileVersion ? slide.src : '/swiper-europe-mobile.png'} alt={slide.header} w="100%" cursor="pointer"/>
+            
               <Box position="absolute" zIndex="1">
                 <Text
                   as="h1"
@@ -81,6 +82,7 @@ export function Carousel() {
                   lineHeight={["1.75rem",
                   "2.5rem",
                   "3.5rem"]}
+                  cursor="pointer"
                 >
                   {slide.header}</Text>
                 <Text
@@ -93,11 +95,13 @@ export function Carousel() {
                   lineHeight={["1.075rem",
                   "1.155rem",
                   "2.95rem"]}
+                  cursor="pointer"
                 >
                   {slide.text}
                 </Text>
               </Box>
-            
+              </Box>
+            </Link>
           </Flex>
         </SwiperSlide>
       ))}

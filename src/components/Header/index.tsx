@@ -1,5 +1,5 @@
-import { Box, Flex, Image, useBreakpointValue } from "@chakra-ui/react";
-import Link from 'next/link'
+import { Box, Flex, Image, useBreakpointValue, Link } from "@chakra-ui/react";
+/* import Link from 'next/link' */
 
 interface HeaderProps {
   contnent?: boolean;
@@ -21,7 +21,7 @@ export function Header({ contnent = false }: HeaderProps) {
       position="relative"
     >
       {contnent && (
-        <Link href="/" passHref>
+        <Link href="/">
           <Box
             borderLeft="2px"
             borderBottom="2px"
@@ -31,13 +31,15 @@ export function Header({ contnent = false }: HeaderProps) {
             position="absolute"
             left="20px"
             ml="8%"
+            cursor="pointer"
           />
         </Link>
       )}
       <Image
         src="/logo.svg"
         alt="logo"
-        h={isWideVersion ? "46" : "20px"} 
+        h={isWideVersion ? "46" : "20px"}
+        
       />
     </Flex>
   ) 

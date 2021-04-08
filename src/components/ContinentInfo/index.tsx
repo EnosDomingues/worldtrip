@@ -1,4 +1,4 @@
-import { Text, Flex, Heading, Image, useBreakpointValue } from "@chakra-ui/react";
+import { Text, Flex, Heading, Image, useBreakpointValue, Tooltip } from "@chakra-ui/react";
 
 export function ContinentInfo() {
   const isWideVersion = useBreakpointValue({
@@ -28,7 +28,9 @@ export function ContinentInfo() {
           <Text fontWeight={isWideVersion ? "600" : "400"} fontSize={isWideVersion ? "1.5rem" : "1.125rem"}>
             cidades +100
           </Text>
-          <Image src="/info.svg" ml="5px"/>
+          <Tooltip label="Hey, I'm here!" aria-label="A tooltip" bg="dark.50" borderRadius="4px">
+           <Image src="/info.svg" ml="5px"/>
+          </Tooltip>
         </Flex>
       </Flex>
     </Flex>
