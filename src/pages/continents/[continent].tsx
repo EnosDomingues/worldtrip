@@ -1,4 +1,4 @@
-import { Flex, Text, VStack, Image } from "@chakra-ui/react";
+import { Flex, Text, Stack, Image, useBreakpointValue } from "@chakra-ui/react";
 import { GetServerSideProps } from "next";
 import { Banner } from "../../components/Banner";
 import { ContinentDescription } from "../../components/ContinentDescription";
@@ -18,22 +18,41 @@ interface ContinentsProps {
 }
 
 export default function Continents({ continent } : ContinentsProps) {
+  const isWideVersion = useBreakpointValue({
+    base: false,
+    lg: true
+  })
+
   return (
     <Flex w="100%" minH="100vh" direction="column" align="center">
       <Header contnent={true}/>
       <Banner
-        src={continent.banner_mobile}
-        customMobileHeight="150px"
+        src={isWideVersion ? '/europe-banner-wide.png' : continent.banner_mobile}
+        customMobileHeight={isWideVersion ? undefined : "150px"}
+        customWideHeight={isWideVersion ? "500px" : undefined}
         customHeader={continent.name}
       />
+      {isWideVersion ? (
+        <>
+        <Flex ml="-90px" align="center">
+              <ContinentDescription description={continent.description} maxW="600px" maxH="211px" />
+              <ContinentInfo />
+        </Flex>
+              <Flex direction="column" px="250px" w="100%">
+              <Text fontWeight="500" fontSize="1.5rem"  mt="32px" mb="40px">Cidades +100</Text>
+            </Flex>
+            </>
+      ):
+      ( 
       <Flex direction="column" mx="4">
         <ContinentDescription description={continent.description}/>
         <ContinentInfo />
         <Text fontWeight="500" fontSize="1.5rem" w="100%" mt="32px">Cidades +100</Text>
       </Flex>
+      )}
 
-      <VStack justify="center">
-        <Flex mt="20px" direction="column">
+      <Stack justify="center" spacing={isWideVersion ? '45px' : ''} align="center" direction={isWideVersion ? 'row' : 'column'} w="100%">
+        <Flex mt={isWideVersion ? '' : '20px'} direction="column">
           <Image src="/londres.png" />
           <Flex
             borderLeft="2px"
@@ -125,7 +144,8 @@ export default function Continents({ continent } : ContinentsProps) {
             </Flex>
           </Flex>
         </Flex>
-      </VStack>
+      </Stack>
+
     </Flex>
   )
 }
