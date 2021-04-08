@@ -27,7 +27,6 @@ export default function Home() {
       <Flex w="100%" maxW="1140px" mb="10" position="relative" align="center" justify="center">
         <Carousel />
       </Flex>
-
     </Flex>
   )
 }

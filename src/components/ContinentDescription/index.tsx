@@ -13,7 +13,7 @@ export function ContinentDescription({ description, maxW, maxH }: ContinentDescr
   })
 
   return (
-    <Flex my={isWideVersion ? "80px" : "6"}>
+    <Flex my={isWideVersion ? "" : "6"}>
       <Text fontSize={isWideVersion ? "1.5rem" : "0.875rem"} align="justify" color="dark.500" 
       w={maxW ? maxW : "auto"} 
       h={maxH ? maxH : ""}

@@ -25,11 +25,12 @@ export function Header({ contnent = false }: HeaderProps) {
           <Box
             borderLeft="2px"
             borderBottom="2px"
-            w="10px"
-            h="10px"
+            w="12px"
+            h="12px"
             transform="rotate(45deg)"
             position="absolute"
             left="20px"
+            ml="8%"
           />
         </Link>
       )}
