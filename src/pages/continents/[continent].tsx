@@ -35,12 +35,13 @@ export default function Continents({ continent } : ContinentsProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  const { continent } = params;
+  const { continentId } = params;
 
-  const requestedContinent: Continent = await api.get(`/continent/${continent}`)
+  const { continent: continents } = await api.get(`/`)
   .then(response => response.data)
 
-  console.log(requestedContinent)
+  const requestedContinent = continents[0]
+
 
   return {
     props: {
